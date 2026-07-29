@@ -33,5 +33,3 @@ if wins_against[playerChoice] == cpuChoice:
     print("Du hast gewonnen!")
 else:
     print("Du hast verloren!")
-
-
