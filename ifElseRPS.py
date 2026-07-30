@@ -1,6 +1,42 @@
 import random
 
 
+# Hand Grafiken
+fistHand = ("""
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+""")
+
+openHand = ("""
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+""")
+
+fingerHand = ("""
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+""")
+
+
+hand_graphics = {
+    "rock": fistHand,
+    "paper": openHand,
+    "scissors": fingerHand
+}
+
+
 # Spieler gibt seine Wahl ein
 playerChoice = str(input("rock, paper or scisoors? Choose: "))
 
@@ -11,16 +47,19 @@ cpuChoice = random.choice(cpuOptions)
 
 
 # Beide Wahlen ausgeben
-print(playerChoice)
-print(cpuChoice)
+print(hand_graphics[playerChoice])
+print("versus")
+print(hand_graphics[cpuChoice])
 
 
 # IfEsle Bedingung
 if playerChoice == "rock" and cpuChoice == "scissors":
-    print("Du hast gewonnen!")
+    print("You win!")
 elif playerChoice == "scissors" and cpuChoice == "paper":
-    print("Du hast gewonnen!")
+    print("You win!")
 elif playerChoice == "paper" and cpuChoice == "rock":
-    print("Du hast gewonnen!")
+    print("You win!")
+elif playerChoice == cpuChoice:
+    print("Draw!")
 else:
-    print("Du hast verloren!")
+    print("You lose!")
